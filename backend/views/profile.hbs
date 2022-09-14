@@ -1,0 +1,334 @@
+<head>
+<title> fit birds </title>
+<link rel="stylesheet" href="css/first2.css">
+<style>
+
+.fixed
+{
+	position:fixed;
+	top:20px;
+}
+
+.fixed_right
+{
+	position:fixed;
+	top:20px;
+	right:10px;
+}
+
+#dp{
+border-radius: 32px;
+}
+
+.profile{
+padding: 10px 0 0 92px;
+text-align:center;
+}
+
+   .profilebutton{
+        height: 37px;
+    background: blue;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 8px;
+    width: 50%;
+
+}
+
+
+.assist{
+
+background: black;
+    color: white;
+    border-radius: 25px;
+    text-align:center;
+}
+.dashboard{
+background:white;
+border-radius:20px;
+padding: 29px;
+margin: 0 0 0 268px;
+
+
+}
+
+.logs{
+text-align: center;
+}
+.smallbutton{
+margin-bottom: -17px;
+ width: 100%;
+ height: 60px;
+ padding:0 0 0 196px;
+}
+
+</style>
+</head>
+ <body>
+    <nav>
+    <ul class="top" id="drop">
+    <li><a  href="/" >HOME</a></li>
+    <li><a  href="/dash" >CATALOUG</a></li>
+    <li><a onclick="formfeed()">FEEDBACK</a></li>
+    <li><a  href="#about" >ABOUT US</a></li>
+    <li><a  href="mailto:officialkam9@gmail.com" >CONTACT US</a></li>
+    <li class="right"><a href="/login" > SIGN OUT</a>  </li>  
+    <li class="dropdown"><a href="#" onclick="drop()">&#9776</a></li>
+   </ul>
+  </nav>
+   <div class="tophod">
+  <div class="col11 hoard"> </div> <div class="col15 hoard"><p id="formfeed"> </p> </div>
+ </div>
+ <div class="container">
+  <div class="row">
+    <div class="col12 fixed">
+     <h3 align="center">
+       Your Personal and physical info
+       </h3>
+        <table cellspacing="5px" cellpadding="5px" border="0">
+         <tr><th> Name: </th> <td> </td><td> Kamil Singh</td> </tr>
+         <tr><th> Age: </th>  <td> </td><td> 21</td> </tr>
+         <tr><th> Email:</th> <td> </td> <td> officialkam9@gmail.com</td> </tr>
+         <tr><th> Height: </th>  <td> </td><td> 170cm</td> </tr>
+         <tr><th> Weight:</th>  <td> </td><td> 55kg</td> </tr>
+         <tr><th> Mobile No:</th>  <td> </td><td> 9906231920</td> </tr>
+         <tr><th> Activity:</th> <td> </td> <td> Light</td> </tr>
+         <tr><th> BMI:</th>  <td> </td><td> 19.26</td> </tr>
+         <tr><th> Category:</th> <td> </td> <td> Athelete</td> </tr>
+         <tr><th> Chest:</th> <td> </td> <td> 34cm</td> </tr>
+         <tr><th> Shoulder:</th> <td> </td> <td> 96cm</td> </tr>
+         <tr><th>Waist:</th> <td> </td> <td> 52cm</td> </tr>
+         
+        </table>
+    </div>
+    <div class="col14 dashboard">
+       <div > <h3 align="center">  Your Dashboard </h3></div>
+       <div> <a href="/activity#recommend" style="text-decoration:none;"> <button class=mediumbutton> Set goals </button></a> <pre style="display:inline;">                </pre>
+        <a href="/dietplans" style="text-decoration:none;float:right;"> <button class=mediumbutton> Buy Diet plans </button></a>  </div>
+        <div class='logs'>
+        <button onclick="fun(1)" class="smallbutton "> Walking logs  <pre style="display:inline;" >                    </pre><h1 class="toggle" style="display:inline;">+</h1> </button>
+        <p id="expander1"> </p>
+        <button  onclick="fun(2)" class="smallbutton"> Running logs <pre style="display:inline;" >                    </pre><h1 class="toggle" style="display:inline;">+</h1> </button>
+        <p id="expander2"> </p>
+        <button  onclick="fun(3)" class="smallbutton"> Workout logs<pre style="display:inline;" >                    </pre><h1 class="toggle" style="display:inline;">+</h1> </button>
+         <p id="expander3"> </p>
+        <button  onclick="fun(4)" class="smallbutton">Goals logs <pre style="display:inline;" >                      </pre><h1 class="toggle" style="display:inline;">+</h1> </button>
+         <p id="expander4"> </p>
+        <button  onclick="fun(5)" class="smallbutton">Meals logs <pre style="display:inline;" >                      </pre><h1 class="toggle" style="display:inline;">+</h1> </button>
+         <p id="expander5"> </p>
+         <button  onclick="fun(7)" class="smallbutton">Custom Diet-plan<pre style="display:inline;" >                  </pre><h1 class="toggle" style="display:inline;">+</h1> </button>
+         <p id="expander6"> </p>   
+           </div>
+           
+    </div>
+      <div class="col13 fixed_right ">
+       <div class="col11 profile"><image id="dp" class="profile" src="../public/images/window.jpg"  height="63px" width="63px"/></div>
+       <div class="col16 profile"> <h5> Kamil Singh,25 <br> officialkam9@gmail.com</h5></div>
+     <div  class="profile">
+     <button onclick="fun()" class="profilebutton"> Update profile </button>
+   </div>
+     <div  class="profile">
+     <button onclick="fun()" class="profilebutton"> Health Log </button>
+   </div>
+     <div  class="profile">
+     <button onclick="fun()" class="profilebutton"> Track your goals </button>
+   </div>
+     <div  class="profile">
+     <button onclick="fun()" class="profilebutton"> Diet and Fitness Plan </button>
+   </div>
+   <div class='assist'>
+     <h4 align="center"> Wanna Ask something ?</h4>
+       <form>
+       Query: <br> <input type='text' height="100px" weight="50px" name="query" id="query"> <br>
+       Desc :<textarea name='desc' value='desc' name="desc" id="desc" cols='50' rows='6'></textarea>
+       <input type="submit" class="formbutton">
+      </form>
+   
+   </div>
+   
+  </div>
+  <script>
+  let one=0,two=0,three=0,four=0,five=0,six=0;
+  function fun(pass)
+  {
+  let p; 
+  let q;
+  
+   if(pass==1)
+    {  p=document.getElementById("expander1");
+       q=document.getElementsByClassName("toggle");  
+	   if(one%2==0)
+	   {
+   q[0].innerText="";
+ let str=`<div class="col20 topp" style="margin:0 auto 0 auto;">
+ 		   <fieldset style="width:80%; margin:80 auto 40 auto;"><legend> Track your   </legend>
+ 		   
+ 		   <div id="track activity">
+ 		      <div class="line left"> Choose your Activity  </div > <div class="line right ">  </div>  </br>
+ 		        <div id="img"><image src="running.jpg" alt="run" ></image> </div>
+ 		     <form>
+ 		     <div class="choose">
+ 		     <select  class="choose1" name="choose1" id="choose1" onchange="custom1()">
+ 		     <option class="inputs" value=""> Choose Time-span </option>
+ 		     <option class="inputs" value="weekly"> weekly</option>
+ 		     <option class="inputs" value="Monthly"> Monthly</option>
+ 		     <option class="inputs" value="half-yearly">Half-yearly</option>
+ 		     <option class="inputs" value="Custom"> Custom</option>
+ 		      </select>
+ 		      </div>
+ 		      <div>
+ 		      From <br><input class="inputs"  type="date" id="month1"> <br>
+ 		      To <br>  <input class="inputs"  type="date" id="distance1"> <br>
+ 		      <input class="formbutton" type="submit" >
+ 		     </div>
+ 		   </form>
+ 		   </div>
+ 		   </fieldset>
+ 		 </div>` 
+ 	  p.innerHTML=str;
+	   }
+	   else
+		   {
+		    p.innerText="";
+		    q[0].innerText="+"
+		   
+		   }
+	   one++;
+ }
+   
+   
+
+ else if(pass==2)
+ {p=document.getElementById("expander2");
+ q=document.getElementsByClassName("toggle");
+ q[1].innerText="";
+ let str=`<div class="col20 topp" style="margin:0 auto 0 auto;">
+	   <fieldset style="width:80%; margin:80 auto 40 auto;"><legend> Track your   </legend>
+	   
+	   <div id="track activity">
+	      <div class="line left"> Choose your Activity  </div > <div class="line right ">  </div>  </br>
+	        <div id="img"><image src="running.jpg" alt="run" ></image> </div>
+	     <form>
+	     <div class="choose">
+	     <select  class="choose1" name="choose1" id="choose1" onchange="custom1()">
+	     <option class="inputs" value=""> Choose Time-span </option>
+	     <option class="inputs" value="weekly"> weekly</option>
+	     <option class="inputs" value="Monthly"> Monthly</option>
+	     <option class="inputs" value="half-yearly">Half-yearly</option>
+	     <option class="inputs" value="Custom"> Custom</option>
+	      </select>
+	      </div>
+	      <div>
+	      From <br><input class="inputs"  type="date" id="month1"> <br>
+	      To <br>  <input class="inputs"  type="date" id="distance1"> <br>
+	      <input class="formbutton" type="submit" >
+	     </div>
+	   </form>
+	   </div>
+	   </fieldset>
+	 </div>` 
+	 p.innerHTML=str; 
+ }
+
+ else if(pass==3)
+ {p=document.getElementById("expander3");
+ q=document.getElementsByClassName("toggle");
+ q[2].innerText="";
+let  str=`<div class="col20 topp" style="margin:0 auto 0 auto;">
+	   <fieldset style="width:80%; margin:80 auto 40 auto;"><legend> Track your   </legend>
+	   
+	   <div id="track activity">
+	      <div class="line left"> Choose your Activity  </div > <div class="line right ">  </div>  </br>
+	        <div id="img"><image src="running.jpg" alt="run" ></image> </div>
+	     <form>
+	     <div class="choose">
+	     <select  class="choose1" name="choose1" id="choose1" onchange="custom1()">
+	     <option class="inputs" value=""> Choose Time-span </option>
+	     <option class="inputs" value="weekly"> weekly</option>
+	     <option class="inputs" value="Monthly"> Monthly</option>
+	     <option class="inputs" value="half-yearly">Half-yearly</option>
+	     <option class="inputs" value="Custom"> Custom</option>
+	      </select>
+	      </div>
+	      <div>
+	      From <br><input class="inputs"  type="date" id="month1"> <br>
+	      To <br>  <input class="inputs"  type="date" id="distance1"> <br>
+	      <input class="formbutton" type="submit" >
+	     </div>
+	   </form>
+	   </div>
+	   </fieldset>
+	 </div>` 
+ p.innerHTML=str;
+
+ }
+ else if(pass==4)
+ {  alert("working");
+ 	p=document.getElementById("expander4");
+ 	 q=document.getElementsByClassName("toggle");
+ 	   q[3].innerText="";
+ let str=`<div class="col15 topp " style="margin:0 auto 0 auto">
+     <fieldset style="width:80%; margin:80 auto 40 auto;"><legend> Track your Bicyling </legend>
+ 	   <div >
+ 	      <div  class="line left"> Choose your Activity  </div > <div class="line right "> Burnt :0 cal </div>  </br>
+ 	        <div id="img"><image src="running.jpg" alt="run" ></image> </div>
+ 	     <form>
+ 	      <label> Time </label> <br><input class="inputs"type="number" id="speed4" > <span style="margin-left:-60px;"> No.</span> <br>
+ 	       <label> Distance </label><br><input class="inputs"type="number" id="speed4"> style="text-align:center;"> <span style="margin-left:-60px;"> X</span><br>  
+ 	      <input class="formbutton" type="submit" >
+ 	      
+ 	     </div>
+ 	   </form>
+ 	   </div>
+ 	   </fieldset>
+ 	 </div>`
+ p.innerHTML=str;
+ }
+ else if(pass==5)
+ {  alert("working");
+ 	p=document.getElementById("expander4");
+ 	 q=document.getElementsByClassName("toggle");
+ 	   q[4].innerText="";
+ let str=`<div class="col15 topp " style="margin:0 auto 0 auto">
+     <fieldset style="width:80%; margin:80 auto 40 auto;"><legend> Track your Bicyling </legend>
+ 	   <div >
+ 	      <div  class="line left"> Choose your Activity  </div > <div class="line right "> Burnt :0 cal </div>  </br>
+ 	        <div id="img"><image src="running.jpg" alt="run" ></image> </div>
+ 	     <form>
+ 	      <label> Time </label> <br><input class="inputs"type="number" id="speed4" > <span style="margin-left:-60px;"> No.</span> <br>
+ 	       <label> Distance </label><br><input class="inputs"type="number" id="speed4"> style="text-align:center;"> <span style="margin-left:-60px;"> X</span><br>  
+ 	      <input class="formbutton" type="submit" >
+ 	      
+ 	     </div>
+ 	   </form>
+ 	   </div>
+ 	   </fieldset>
+ 	 </div>`
+ p.innerHTML=str;
+ }
+ else if(pass==6)
+ {  alert("working");
+ 	p=document.getElementById("expander4");
+ 	 q=document.getElementsByClassName("toggle");
+ 	   q[5].innerText="";
+ let str=`<div class="col15 topp " style="margin:0 auto 0 auto">
+     <fieldset style="width:80%; margin:80 auto 40 auto;"><legend> Track your Bicyling </legend>
+ 	   <div >
+ 	      <div  class="line left"> Choose your Activity  </div > <div class="line right "> Burnt :0 cal </div>  </br>
+ 	        <div id="img"><image src="running.jpg" alt="run" ></image> </div>
+ 	     <form>
+ 	      <label> Time </label> <br><input class="inputs"type="number" id="speed4" > <span style="margin-left:-60px;"> No.</span> <br>
+ 	       <label> Distance </label><br><input class="inputs"type="number" id="speed4"> style="text-align:center;"> <span style="margin-left:-60px;"> X</span><br>  
+ 	      <input class="formbutton" type="submit" >
+ 	      
+ 	     </div>
+ 	   </form>
+ 	   </div>
+ 	   </fieldset>
+ 	 </div>`
+ p.innerHTML=str;
+ }
+    		 
+ }
+  </script>

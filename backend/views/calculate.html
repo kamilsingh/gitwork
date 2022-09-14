@@ -1,0 +1,241 @@
+<html>
+<title>
+Fit birds
+</title>
+<head>
+<link rel="stylesheet" href="css/first2.css">
+<script type="text/javascript" src="script/javascript.js"></script>
+</head>
+
+<body>
+<nav  >
+<ul class="top" id="drop">
+<li><a  href="/" >HOME</a></li>
+<li><a   href="#" >ABOUT</a></li>
+<li><a  href="/dash" >RESOURCES</a></li>
+<li><a  href="#" >CARRERS</a></li>
+<li><a  href="#" >CONTACT US</a></li>
+<li class="right"><a href="/login" >LOG IN</a>  </li>  
+<li class="right"> <a href="/signup" >SIGN UP</a></li>
+<li class="dropdown"><a href="#" onclick="drop()">&#9776</a></li>
+</ul>
+</nav>
+<div class="container">
+ <div class="row">
+ 
+  <div class="col12">
+   <div class="breakfast">
+       <button onclick="fun({name:'kamil',sec:'india'})"> Calculate Breakfast</button></div>
+    <div><p id="expander1">  </p> </div>
+    </div>
+   <div class="col12">
+   <div class="Lunch">
+       <button onclick="calc2()"> Calculate Lunch</button></div>
+    <div><p id="expander2">  </p></div>
+   </div>
+   <div class="col12">
+   <div class="Dinner">
+  
+       <button onclick="calc3()"> Calculate Dinner</button></div>
+    <div><p id="expander3">  </p></div>
+    </div>
+   <div class="col12">
+   <div class="breakfast">
+       <button onclick="calc4()"> Calculate Snackes</button></div>
+     
+    <div><font color="blue"><p id="expander4">  love u </p></font></div>
+  </div>
+  
+  </div>
+   </div>
+   
+     <script>
+    
+    function fun(obj)
+    {
+    	alert("hey")
+    	console.log(obj);
+    	
+    	
+    }
+     
+     function calc1()
+  {
+    	  let p=document.getElementById("expander1");
+ 	 	 
+	 	   
+	 	  let n1=parseInt(prompt('enter the total number of items in breakfast '));
+	 	 
+	 	  
+	 	  strbf="Enter the items in breakfast <br> <form action='/track'  method='post' onsubmit='return close1("+n1+")'>";  
+	 	  
+	 	  for(let i=0;i<n1;i++)
+	 	  {strbf=strbf+"<div>Name <input type='text'  id='bfitem"+i+"' name='bfitem"+i+"' class='cal' >  Quantity(in grams) <input type='number' min='0' name='bfquant"+i+"' id='bfquant"+i+"' class='cal'> </div>"}
+	 	  strbf=strbf+'<input type="submit" name="track" > </form>'
+	 	  p.innerHTML=strbf; 
+	   
+  }
+     function  calc2()
+     {
+   	    let q=document.getElementById("expander2");
+   	 	 
+   	 	   
+   	 	  let n2=parseInt(prompt('enter the total number of items in lunch '));
+   	 	 
+   	 	  
+   	 	  strl="Enter the items in lunch <br> <form action='/track' method='post' onsubmit='return close2("+n2+")'>";  
+   	 	  
+   	 	  
+   	 	  for(let i=0;i<n2;i++)
+   	 	  {strl=strl+"<div>Name <input type='text' name='litem"+i+"' id='litem"+i+"' class='cal' >  Quantity(in grams) <input type='number' min='0' name='lquant"+i+"' id='lquant"+i+"' class='cal'> </div>"}
+   	 	  strl=strl+'<input type="submit" name="track" > </form>'
+   	 	  q.innerHTML=strl;
+
+   	   
+   	 }
+     function calc3()
+     {
+   	  let r=document.getElementById("expander3");
+   	 
+   	  
+   	  let n3=parseInt(prompt('enter the total number of items in dinner'));
+   	
+   	  
+   	  strd="Enter the items in Dinner <br> <form action='/track' method='post' onsubmit='return close3("+n3+")'>"; 
+   	  
+   	    
+   	    for(let i=0;i<n3;i++)
+   		  {strd=strd+"<div>Name <input type='text' name='ditem1"+i+"' id='ditem"+i+"' class='cal' >  Quantity(in grams) <input type='number' min='0'  name='dquant"+i+"' id='dquant"+i+"' class='cal'> </div>"}
+   	    strd=strd+'<input type="submit" name="track" > </form>' 
+   	    r.innerHTML=strd;
+   		  
+   		 
+   		  
+   		   
+   			
+     }
+     
+     function calc4(){
+      	  
+      	  let s=document.getElementById("expander4");
+      	  let n4=parseInt(prompt('enter the total number of items in snakes/etc'));
+      	  strs="Enter the items in Snacks <br> <form action='/track' method='post' onsubmit='return close4("+n4+")'>"; 
+      	 
+      	  for(let i=0;i<n4;i++)
+      	  {strs=strs+"<div> Name <input type='text' name='sitem1"+i+"' id='sitem"+i+"' class='cal'>  Quantity(in grams) <input type='number' name='squant"+i+"' id='squant"+i+"' class='cal'> </div>"}
+      	  strs=strs+'<input type="submit" name="track" > </form>'
+      	  s.innerHTML=strs;
+      	  
+      	    
+        }
+        
+     function close1(n){
+     	 let flag=0;
+    	 var writer=document.getElementById("expander1");
+     	  let str="";
+     	  let str1="";
+     	  const item=[];
+     	  const quant=[];
+     	for(let i=0;i<n;i++)
+     	{   
+     		item[i]=document.getElementById("bfitem"+i).value;
+     	   quant[i]=document.getElementById("bfquant"+i).value;
+     	      if(item[i]=="")
+     	      {str1+="\nitem "+(i+1)+" name can't be empty\n"; flag=1;}
+     	      if(quant[i]==""||quant[i]==NULL)
+     	    	     { quant[i]=0;}
+     	        str+="Item :"+item[i]+"     "+quant[i]+"g\n";
+     	  alert(quant[i])
+     	}
+     	 if(flag==1)
+   	   {  writer.innerText="Error : "+str1; return false;}
+   	   else if(flag==0) 
+   	   { 
+   	     return true; }
+     	  
+       }
+     
+     function close2(n){
+    	 let flag=0; 
+    	 var writer=document.getElementById("expander2");
+    	  let str="";
+     	  let str1="";
+     	  const item=[];
+     	  const quant=[];
+     	for(let i=0;i<n;i++)
+     	{   
+     		item[i]=document.getElementById("litem"+i).value;
+     	   quant[i]=document.getElementById("lquant"+i).value;
+     	      if(item[i]=="")
+     	      {str1+="\nitem "+(i+1)+" name can't be empty\n"; flag=1;}
+     	      if(quant[i]==""||quant[i]==NULL)
+     	    	     { quant[i]=0;}
+     	        str+="Item :"+item[i]+"     "+quant[i]+"g\n";
+     	  alert(quant[i])
+     	}
+    	  
+     	   if(flag==1)
+     	   { writer.innerText="Error : "+str1; return false;}
+     	   else if(flag==0) 
+     	   { 
+     	   return true;} 
+      }
+     function close3(n){
+    	  let flag=0;
+    	 var writer=document.getElementById("expander3");
+    	  let str="";
+     	  let str1="";
+     	  const item=[];
+     	  const quant=[];
+     	for(let i=0;i<n;i++)
+     	{   
+     		item[i]=document.getElementById("ditem"+i).value;
+     	   quant[i]=document.getElementById("dquant"+i).value;
+     	      if(item[i]=="")
+     	      {str1+="\nitem "+(i+1)+" name can't be empty\n"; flag=1;}
+     	      if(quant[i]==""||quant[i]==NULL)
+     	    	     { quant[i]=0;}
+     	        str+="Item :"+item[i]+"     "+quant[i]+"g\n";
+     	  alert(quant[i])
+     	}
+    	  
+     	   if(flag==1)
+     	   { writer.innerText="Error : "+str1; return false;}
+     	   else if(flag==0) 
+     	   { 
+     	   return true;}
+      }
+     function close4(n){
+    	  let flag=0;
+     	 var writer=document.getElementById("expander4"); 
+    	 let str="";
+     	  let str1="";
+     	  const item=[];
+     	  const quant=[];
+     	for(let i=0;i<n;i++)
+     	{   
+     		item[i]=document.getElementById("sitem"+i).value;
+     	   quant[i]=document.getElementById("squant"+i).value;
+     	      if(item[i]=="")
+     	      {str1+="\nitem "+(i+1)+" name can't be empty\n"; flag=1;}
+     	      if(quant[i]==""||quant[i]==NULL)
+     	    	     { quant[i]=0;}
+     	        str+="Item :"+item[i]+"     "+quant[i]+"g\n";
+     	  alert(quant[i])
+     	}
+    	  
+     	   if(flag==1)
+     	   { writer.innerText="Error : "+str1; return false;}
+     	   else if(flag==0) 
+     	   { 
+     	   return true;}
+      }
+    
+  </script>
+   </body>
+   </html>
+   
+   
+   
+   
+   

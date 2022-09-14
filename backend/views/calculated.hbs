@@ -1,0 +1,277 @@
+<html>
+ <title>
+ Fit birds
+ </title>
+ <head>
+ 
+ <link rel="stylesheet" href="/css/first2.css">
+ </head>
+ <body>
+  <nav>
+    <ul class="top" id="drop">
+    <li><a  href="/" id="logopad"><image src="/images/weblogo.png" alt="Fitbirds hoarding"  id="logofix"/></a></li>
+    <li><a  href="/dash" >CATALOUG</a></li>
+    <li><a onclick="formfeed()">FEEDBACK</a></li>
+    <li><a  href="#about" >ABOUT US</a></li>
+    <li><a  href="mailto:officialkam9@gmail.com" >CONTACT US</a></li>
+    <li class="right"><a href="/login" >LOG IN</a>  </li>  
+    <li class="right"> <a href="/signup" >SIGN UP</a></li>
+    <li class="dropdown"><a href="#" onclick="drop()">&#9776</a></li>
+   </ul>
+  </nav>
+   <div class="tophod">
+  <div class="col11 hoard"> </div> <div class="col15 hoard"><p id="formfeed"> </p> </div>
+ </div>
+ <div class="container">
+  <div class="row"> 
+  <div class="col12 head">
+     Calculate your Calories
+   </div>
+   <div class="col12 result">
+     Total Calories taken :{{content}}
+   </div>
+ <div class="row banner">
+ 
+  <div class="col15">
+   <div id="breakfast">
+        <Label  class="label"> BreakFast</Label>
+       <button class="buttonmeal" onclick="calc1(1)"> Calculate</button></div>
+       <div> <font color="red"><p id="expander1">   </p></font> </div>
+       <div> <p id="result1">  </p></div>
+       </div>
+       <div class="col15">
+       <div id="Lunch">
+        <Label class="label"> Lunch</Label>
+       <button class="buttonmeal" onclick="calc1(2)"> Calculate</button></div>
+       <div><font color="red"><p id="expander2">  </p></font></div>
+        <div> <p id="result2">  </p></div>
+       </div>
+       <div class="col15">
+       <div id="Dinner">
+        <Label class="label"> Dinner</Label>
+       <button class="buttonmeal" onclick="calc1(3)"> Calculate</button></div>
+       <div><font color="red"><p id="expander3">  </p></font> </div>
+        <div> <p id="result3">  </p></div>
+       </div>
+       <div class="col15">
+       <div id="snacks">
+        <Label class="label"> Others</Label>
+       <button class="buttonmeal" onclick="calc1(4)"> Calculate</button></div>
+     
+       <div><font color="red"><p id="expander4">  </p></font></div>
+        <div> <p id="result4">  </p></div>
+         </div>
+         </div>
+         <div ><p id="favlist"> </p>
+         </div>
+          </div>
+
+   </div>
+  <script src="/script/javascript.js" type="text/javascript">  </script>
+  <script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script>
+   function calc1(pass)
+   {   let p;
+      if(pass==1)
+      {p=document.getElementById("expander1");}
+      else if(pass==2)
+      {p=document.getElementById("expander2");}
+      else if(pass==3)
+      {p=document.getElementById("expander3");}
+      else if(pass==4)
+      {p=document.getElementById("expander4");}
+         
+ 	 	 
+ 	 	  let n1=parseInt(prompt('enter the total number of items in breakfast '));
+ 	 	  strbf=`<form action='/track1' method='post' onsubmit='return close1("+n1+")'> <div style='margin:0 auto 0 175px;'><h3><label> Give this meal a name</label><input type='text' id='mealname' name='mealname' class='itemname'> <br><pre> Enter the items in Breakfast 
+   Item Name                      Quantity </pre>  </h3>`; 
+ 	 	   if(!isNaN(n1))
+ 	 	  { 
+ 	 	 for(let i=0;i<n1;i++)
+ 	 	 { 
+ 	 	  strbf=strbf+"<input type='text'  id='item"+i+"' name='item"+i+"' class='itemname'  ><input type='number' min='1' name='quant"+i+"' id='quant"+i+"' class='itemquant'> <select  class='input' name='s_q' id='s_q'> <option   class='input' value=''>Units</option><option  class='input' value='grams'>grams</option><option  class='input' value='Numbers'>No.</option> <option  class='input' value='serving'>Serving</option> </select> <br>"; 
+ 	 	 }
+ 	 	 strbf=strbf+'<br> <input type="submit" class="smallbutton" name="'+pass+'" > </div> </form>' 
+ 	 	  p.innerHTML=strbf; 
+ 	 	  
+ 	 	  }
+ 	 	  else
+ 	 	  {
+ 	 	   alert("request Canceled");
+ 	 	  }
+    }
+   
+    
+   
+    
+         
+      function close1(n){
+      	alert('are you sure to submit');
+      	 let flag=0;
+     	 var writer=document.getElementById("expander1");
+      	  let str="";
+      	  let str1="";
+      	  const item=[];
+      	  const quant=[];
+      	for(let i=0;i<n;i++)
+      	{   
+      		item[i]=document.getElementById("item"+i).value;
+      	   quant[i]=document.getElementById("quant"+i).value;
+      	      if(item[i]=="")
+      	      {str1+="\nitem "+(i+1)+" name can't be empty\n"; flag=1;}
+      	      if(quant[i]==""||quant[i]==NULL||quant[i]==0)
+      	    	     {  str1+="\nquantity "+(i+1)+"can't be empty or zero\n";flag=1;
+      	    	     document.getElementById("quant"+i).value=0;}
+      	        str+="Item :"+item[i]+"     "+quant[i]+"g\n";
+      	  
+      	}
+     	  
+      	   if(flag==1)
+      	   { writer.innerText="Error : "+str1; return false;}
+      	   else if(flag==0) 
+      	   {  
+      	   return true;}
+        }
+      
+    
+     
+
+ 
+   
+   
+   
+   function update(n){
+      alert("updating");
+     var p=document.getElementById("result"+n);
+     if(n==1) 
+     {p.innerText="Carbs : {carbs1} g \n Protein :{protein1} g \n Fiber :{fiber1} g  \n Fat:{fat1} g \n Energy {energy1} kcal ";}
+     else if(n==2)
+     {p.innerText="Carbs : {carbs2} g \n Protein :{protein2} g \n Fiber :{fiber2} g  \n Fat:{fat2} g \n Energy {energy2} kcal ";}
+     else if(n==3)
+     {p.innerText="Carbs : {carbs3} g \n Protein :{protein3} g \n Fiber :{fiber3} g  \n Fat:{fat3} g \n Energy {energy3} kcal ";}
+     else if(n==4)
+     {p.innerText="Carbs : {carbs4} g \n Protein :{protein4} g \n Fiber :{fiber4} g  \n Fat:{fat4} g \n Energy {energy4} kcal ";}
+        
+                       }
+     
+    
+    
+      async function savefav(){
+    	  const data={name:"kamil",sec:"india"}
+    	  const opt={method:'POST',
+    	     headers:{ 'Content-Type': 'application/json'},
+    	     body:JSON.stringify(data),
+    	  };
+    	  
+    	 
+    	  alert("saving!!!!");
+    	  const resp=await fetch('http://localhost/saving',opt);
+    	  const final_result=await resp.json();
+    	  console.log(final_result);
+    	    alert(final_result.status);
+    	  // fetch('http://localhost/saving',opt).then((req,res)=>{
+     		 //console.log(res);
+     		 //alert('done'); 
+     	    // });
+      } 
+    
+  </script>
+   <style>
+       #calories_cal{
+    	  background:blue;
+    	  color:white;
+    	  font-size:25px;
+    	  text-align:center;
+    	  font-weight:700px;
+    	   
+       }
+       
+       #expander1{
+	
+	font-color:red;
+}
+
+.itemname{
+	
+	padding:16px;
+      font-size:16px;
+      width:192px;
+      height:10px;
+      border-radius:10px;
+      margin:1px 0 0 0;
+}
+
+.itemquant{
+	
+	padding:16px;
+      font-size:16px;
+      width:107px;
+      height:10px;
+      border-radius:10px;
+}
+
+.buttonmeal{
+        height: 37px;
+    background: blue;
+    color: white;
+    font-size: 17px;
+    margin-left: 57px;
+    font-weight: 600;
+    border-radius: 8px;
+    width: -webkit-fill-available;
+
+}
+
+.banner{
+  
+ box-shadow: 0 0 0 1px rgb(0 0 0 / 15%);
+    border: 1px outset;
+    border-radius: 10px;
+    width: 95%;
+    margin: 46px auto 0 auto;
+  }
+
+.label{
+
+font-size: 26px;
+    font-family: emoji;
+    color: white;
+    margin-left: 105px;
+
+}
+
+form{
+color:white;
+
+}
+
+.result{  
+    margin: 0 0 59px auto;
+    color: green;
+    font-size: 23px;
+    border-radius:5px;
+    background:white;
+}
+
+.head{  
+    margin: 0 auto 59px 0;
+    color: green;
+    font-size: 23px;
+    border-radius:5px;
+    background:white;
+}
+
+.input{
+    width: 86px;
+    height: 36px;
+    border-radius: 5px;
+    font-size: 17px;
+
+}
+
+.tab1{
+  tab-size:2;
+}
+     </style>
+    </body>
+    </html>
